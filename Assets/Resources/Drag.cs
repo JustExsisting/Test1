@@ -21,7 +21,14 @@ public class Drag : MonoBehaviour
         RedText = GameObject.Find("RedText").GetComponent<Text>();
         RedText.text = redCNT.ToString();
     }
-
+    private void Update()
+    {
+        if (gameObject.transform.position.y < -1)
+        {
+            transform.position = new Vector3(0, 1, 4);
+            allowDragging = false;
+        }
+    }
     void OnMouseDown()
     {
         allowDragging = true;
@@ -35,6 +42,7 @@ public class Drag : MonoBehaviour
             Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, pointScreen.z);
             Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint);
             transform.position = curPosition;
+
         }
     }
 

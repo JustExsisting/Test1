@@ -31,7 +31,7 @@ public class StartGame : MonoBehaviour
     {
         float rndX = Random.Range(-3f, 1f);
         float rndY = Random.Range(0.1f, 8.5f);
-        float rndZ = Random.Range(4f, 7f);
+        float rndZ = Random.Range(5f, 10f);
 
         GameObject newTarget = Instantiate(Resources.Load(cubeName), new Vector3(rndX, rndY, rndZ), Quaternion.identity) as GameObject;
     }
